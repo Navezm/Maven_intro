@@ -9,11 +9,17 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Demonstration</name>
+    <name>${projet.nom}</name>
     <description>
         demonstration de maven groupe Java de Bxl formation
     </description>
     <inceptionYear>2021</inceptionYear>
+
+    <properties>
+        <projet.nom>Demonstration Maven</projet.nom>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -33,12 +39,26 @@
             <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>C:\Users\local_user\Desktop\Code\Maven\demoMaven\src\main\resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jboss</id>
+            <name>JBoss Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 
 </project>
